@@ -9,13 +9,7 @@
 	"compatibility_date": "2025-04-03",
 	"observability": {
 		"enabled": true
-	},
-  "routes": [
-    {
-      "pattern": "karenwoodhouseformayor.com",
-      "custom_domain": true
-    } ]
-    
+	}    
 
 	/**
 	 * Smart Placement
