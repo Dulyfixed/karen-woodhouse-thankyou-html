@@ -42,13 +42,6 @@ export default {
     I am truly grateful for each and every one of you!
   </div>
 
-  <!-- Simple loop so the page/script never naturally completes -->
-  <script>
-    (function keepAliveLoop() {
-      // No-op loop; runs every 30s to keep the script context alive.
-      setTimeout(keepAliveLoop, 30000);
-    })();
-  </script>
 </body>
 </html>`;
 
