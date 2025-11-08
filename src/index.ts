@@ -50,8 +50,7 @@ export default {
     })();
   </script>
 </body>
-</html>
-';
+</html>';
 
     return new Response(html, {
       headers: {
