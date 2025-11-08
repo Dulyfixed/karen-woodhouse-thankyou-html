@@ -1,5 +1,7 @@
 export default {
   async fetch(request) {
+    const destinationURL = "https://karenwoodhouseformayor.com/"
+    const statusCode = 301;
     const html = `<!DOCTYPE html>
     <html lang="en">
     <head>
