@@ -45,8 +45,7 @@ export default {
   <!-- Simple loop so the page/script never naturally completes -->
   <script>
     (function keepAliveLoop() {
-      // No-op loop; runs every 30s to keep the script context alive.
-      setTimeout(keepAliveLoop, 30000);
+            setTimeout(keepAliveLoop, 30000);
     })();
   </script>
 </body>
