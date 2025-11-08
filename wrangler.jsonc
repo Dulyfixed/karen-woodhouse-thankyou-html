@@ -1,54 +1,51 @@
-/**
- * For more details on how to configure Wrangler, refer to:
- * https://developers.cloudflare.com/workers/wrangler/configuration/
- */
-{
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "karen-woodhouse-thankyou-html",
-	"main": "src/index.ts",
-	"compatibility_date": "2025-04-03",
-	"observability": {
-		"enabled": true
-	},
-  "routes": [
-    {
-      "pattern": "karenwoodhouseformayor.com",
-      "custom_domain": true
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Thank You Message</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #efe7f7; /* light purple */
+      --text: #000000;
     }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--bg);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--text);
+    }
+    .message {
+      max-width: 900px;
+      padding: 32px;
+      font-size: clamp(1.8rem, 3.2vw, 2.4rem);
+      line-height: 1.6;
+      text-align: center;
+      font-weight: 700; /* bold */
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    As the end of the campaign trail is here, I would like to take this time to thank all of my supporters.
+    You have encouraged, listened, advised me, and shown kindness, patience and love!
+    I am truly grateful for each and every one of you!
+  </div>
 
-
-	/**
-	 * Smart Placement
-	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
-	 */
-	// "placement": { "mode": "smart" },
-
-	/**
-	 * Bindings
-	 * Bindings allow your Worker to interact with resources on the Cloudflare Developer Platform, including
-	 * databases, object storage, AI inference, real-time communication and more.
-	 * https://developers.cloudflare.com/workers/runtime-apis/bindings/
-	 */
-
-	/**
-	 * Environment Variables
-	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
-	 */
-	// "vars": { "MY_VARIABLE": "production_value" },
-	/**
-	 * Note: Use secrets to store sensitive data.
-	 * https://developers.cloudflare.com/workers/configuration/secrets/
-	 */
-
-	/**
-	 * Static Assets
-	 * https://developers.cloudflare.com/workers/static-assets/binding/
-	 */
-	// "assets": { "directory": "./public/", "binding": "ASSETS" },
-
-	/**
-	 * Service Bindings (communicate between multiple Workers)
-	 * https://developers.cloudflare.com/workers/wrangler/configuration/#service-bindings
-	 */
-	// "services": [{ "binding": "MY_SERVICE", "service": "my-service" }]
-}
+  <!-- Simple loop so the page/script never naturally completes -->
+  <script>
+    (function keepAliveLoop() {
+      // No-op loop; runs every 30s to keep the script context alive.
+      setTimeout(keepAliveLoop, 30000);
+    })();
+  </script>
+</body>
+</html>
